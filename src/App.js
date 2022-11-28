@@ -4,7 +4,7 @@ import {
   createColumnHelper,
   flexRender,
   getCoreRowModel,
-  useReactTable
+  useReactTable,
 } from "@tanstack/react-table";
 import originalList from "./list.json";
 import debounce from "lodash.debounce";
@@ -23,12 +23,12 @@ const columnHelper = createColumnHelper();
 const columns = [
   columnHelper.accessor("title", {
     cell: (info) => info.getValue(),
-    header: "Title"
+    header: "Title",
   }),
   columnHelper.accessor("artist", {
     cell: (info) => info.getValue(),
-    header: "Artist"
-  })
+    header: "Artist",
+  }),
 ];
 
 export default function App() {
@@ -60,7 +60,7 @@ export default function App() {
   const table = useReactTable({
     data: filteredSongs,
     columns,
-    getCoreRowModel: getCoreRowModel()
+    getCoreRowModel: getCoreRowModel(),
   });
 
   return (
@@ -69,7 +69,7 @@ export default function App() {
 
       <div className="filters">
         <input
-          placeholder="🔎 Search Artist or Song"
+          placeholder="🔎 Filter by Artist or Song"
           value={input}
           onChange={(e) => setInput(e.target.value)}
         />
