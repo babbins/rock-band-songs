@@ -1,0 +1,387 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}
+
+html,
+body {
+  background-color: black;
+  color: white;
+  max-width: 100%;
+}
+
+.App {
+  font-family: system-ui;
+  background-color: black;
+  color: white;
+}
+
+h1 {
+  font-size: 24px;
+
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+}
+input {
+  width: 200px;
+  max-width: 100%;
+  font-size: 16px;
+  height: 30px;
+  background-color: black;
+  color: white;
+  border: 1px solid white;
+  margin-bottom: 15px;
+}
+select {
+  display: block;
+  margin-bottom: 20px;
+}
+thead {
+  text-align: left;
+  font-weight: bold;
+}
+
+tr {
+  padding-top: 10px;
+}
+tr:nth-child(even) {
+  background-color: #333333;
+}
+
+td {
+  font-size: 16px;
+  vertical-align: middle;
+  line-height: 1.4;
+}
+td:first-child {
+  padding-left: 10px;
+}
+table {
+  margin-top: 8px;
+  border-collapse: separate;
+}
+
+h3 {
+  margin-top: 8px;
+}
+
+.backToTop {
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  background-color: white;
+  color: black;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.sticky {
+  position: sticky;
+  border-bottom: 1px solid white;
+  width: calc(100% - 10px);
+  z-index: 1;
+  background-color: black;
+  padding-top: 20px;
+  padding-left: 10px;
+  top: 0;
+}
+
+.header-row {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.starburst {
+  width: 100px;
+  aspect-ratio: 1;
+  animation: spike 1s linear infinite;
+  background-color: goldenrod;
+  will-change: transform clip-path;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+  overflow: visible;
+}
+.starburst-active {
+  animation: spike 0.5s linear infinite;
+  background-image: linear-gradient(to right, #ff758c 0%, #ff7eb3 100%);
+}
+
+.starburst-wrapper {
+  position: relative;
+  flex-grow: 0;
+  flex-shrink: 0;
+  margin-right: 40px;
+  animation: grow 1s alternate infinite;
+}
+.starburst-wrapper-active {
+  animation-duration: 0.5s;
+}
+
+.ali-left,
+.ali-right,
+.ali-left-bot,
+.ali-right-bot {
+  position: absolute;
+  width: 32px;
+  z-index: 1;
+}
+.ali-left,
+.ali-left-bot {
+  left: -5px;
+  transform: scaleX(-1);
+}
+
+.ali-left,
+.ali-right {
+  top: -5px;
+}
+
+.ali-right,
+.ali-right-bot {
+  right: -5px;
+}
+.ali-left-bot,
+.ali-right-bot {
+  bottom: -5px;
+}
+
+.ali-left {
+  transform: scaleX(-1) rotate(-20deg);
+}
+.ali-right {
+  transform: rotate(-20deg);
+}
+.ali-left-bot {
+  transform: scaleX(-1) rotate(20deg);
+}
+.ali-right-bot {
+  transform: rotate(20deg);
+}
+
+@keyframes grow {
+  0% {
+    transform: scale(0.8);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes spike {
+  0% {
+    clip-path: polygon(
+      100% 50%,
+      85.31% 57.02%,
+      96.19% 69.13%,
+      79.93% 70%,
+      85.36% 85.36%,
+      70% 79.93%,
+      69.13% 96.19%,
+      57.02% 85.31%,
+      50% 100%,
+      42.98% 85.31%,
+      30.87% 96.19%,
+      30% 79.93%,
+      14.64% 85.36%,
+      20.07% 70%,
+      3.81% 69.13%,
+      14.69% 57.02%,
+      0% 50%,
+      14.69% 42.98%,
+      3.81% 30.87%,
+      20.07% 30%,
+      14.64% 14.64%,
+      30% 20.07%,
+      30.87% 3.81%,
+      42.98% 14.69%,
+      50% 0%,
+      57.02% 14.69%,
+      69.13% 3.81%,
+      70% 20.07%,
+      85.36% 14.64%,
+      79.93% 30%,
+      96.19% 30.87%,
+      85.31% 42.98%
+    );
+  }
+  to {
+    clip-path: polygon(
+      96.19% 69.13%,
+      79.93% 70%,
+      85.36% 85.36%,
+      70% 79.93%,
+      69.13% 96.19%,
+      57.02% 85.31%,
+      50% 100%,
+      42.98% 85.31%,
+      30.87% 96.19%,
+      30% 79.93%,
+      14.64% 85.36%,
+      20.07% 70%,
+      3.81% 69.13%,
+      14.69% 57.02%,
+      0% 50%,
+      14.69% 42.98%,
+      3.81% 30.87%,
+      20.07% 30%,
+      14.64% 14.64%,
+      30% 20.07%,
+      30.87% 3.81%,
+      42.98% 14.69%,
+      50% 0%,
+      57.02% 14.69%,
+      69.13% 3.81%,
+      70% 20.07%,
+      85.36% 14.64%,
+      79.93% 30%,
+      96.19% 30.87%,
+      85.31% 42.98%,
+      100% 50%,
+      85.31% 57.02%
+    );
+  }
+}
+
+.title-cell {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+.title-cell img {
+  margin-left: 4px;
+  width: 35px;
+}
+
+td {
+  word-break: break-word;
+}
