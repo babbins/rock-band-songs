@@ -1,0 +1,55 @@
+  {
+    "title": "Born to Run",
+    "artist": "Bruce Springsteen",
+    "alisPick": true,
+    "artwork": "https://i.scdn.co/image/ab67616d0000b273503143a281a3f30268dcd9f9"
+  },
+  {
+    "title": "Sympathy for the Devil",
+    "artist": "The Rolling Stones",
+    "alisPick": true,
+    "artwork": "https://i.scdn.co/image/ab67616d0000b273b4cd0fafb0354cb1a020bf6e"
+  },
+
+  {
+    "title": "Hang Me Up to Dry",
+    "artist": "Cold War Kids",
+    "alisPick": true,
+    "artwork": "https://i.scdn.co/image/ab67616d0000b273b1c18903012347d9991613da"
+  },
+  {
+    "title": "How Deep is Your Love",
+    "artist": "Bee Gees",
+    "alisPick": true,
+    "artwork": "https://i.scdn.co/image/ab67616d0000b2730016ec8d9974bf92a95e2820"
+  },
+  {
+
+    "title":"Somebody that I used to Know",
+    "artist": "Gotye",
+    "alisPick": true
+  },
+  {
+    "id": 2628,
+    "title": "Higher",
+    "artist": "Creed",
+    "album": "Human Clay",
+    "track": 9,
+    "genre": "Rock",
+    "year": 1999,
+    "gender": "M",
+    "vocalParts": 1,
+    "cover": "",
+    "guitar": 2,
+    "drums": 3,
+    "vocals": 3,
+    "bass": 3,
+    "freestyleGuitar": "",
+    "freestyleVocals": "",
+    "bpm": 76,
+    "duration": "05:23",
+    "released": "2018-05-24",
+    "delisted": null,
+    "sources": ["DLC", "RBN (Rock Band Network)"],
+    "artwork": "https://i.scdn.co/image/ab67616d0000b273f8f048a5f4749c970078a4fb"
+  },
