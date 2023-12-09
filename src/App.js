@@ -7,17 +7,21 @@ import {
   useReactTable,
 } from "@tanstack/react-table";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import list from "./new-new.json";
+import newestList from "./newest-list-with-artwork.json";
 import debounce from "lodash.debounce";
 
-const LIST = list.filter((song, i) => {
-  return !["Unknown", "Other"].includes(song.genre);
-});
+const LIST = newestList
+  .filter((song) => !!song)
+  .filter((song, i) => {
+    return !["Unknown", "Other"].includes(song.genre);
+  });
 window.LIST = LIST;
 const genres = new Set();
 
 LIST.forEach((song) => {
-  genres.add(song.genre);
+  if (song.genre) {
+    genres.add(song.genre);
+  }
 });
 
 const columnHelper = createColumnHelper();
@@ -89,7 +93,6 @@ export default function App() {
       }),
     [queryValue, selectedGenre, isAlisPicks]
   );
-  console.log(filteredSongs.length);
 
   const table = useReactTable({
     data: filteredSongs,
