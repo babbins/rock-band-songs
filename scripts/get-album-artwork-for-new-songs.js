@@ -35,7 +35,7 @@ const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 async function fetchDataWithDelay(song, api, time) {
   try {
     await delay(time);
-    const albums = await api.searchAlbums(song.album ?? song.title);
+    const albums = await api.searchAlbums(`${song.title} ${song.artist}`);
     return { ...song, artwork: albums.body.albums.items[0].images[0].url };
   } catch (error) {
     console.error(`Error fetching data for:`, song, error);
@@ -50,7 +50,7 @@ function sleep(ms) {
 
 (async function () {
   const accessToken = await getAccessToken();
-  const songs = JSON.parse(getJsonFile("src/list-with-picks-2.json"));
+  const songs = JSON.parse(getJsonFile("src/newpack.json"));
   const spotifyApi = new SpotifyWebApi({
     clientId,
     clientSecret,
@@ -69,7 +69,7 @@ function sleep(ms) {
   console.log(songsWithArtwork);
   Promise.allSettled(songsWithArtwork).then((values) => {
     fs.writeFileSync(
-      "src/new-list-with-artwork.json",
+      "src/new-pack-with-artwork.json",
       JSON.stringify(values.map((value) => value.value))
     );
     fs.writeFileSync("src/failed-songs.json", JSON.stringify(failedSongs));
